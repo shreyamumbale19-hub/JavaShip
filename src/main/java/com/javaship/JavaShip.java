@@ -56,8 +56,33 @@ public class JavaShip {
                         Troubleshooter.showSuggestions();
                         break;
 
+                    case 9:
+                        System.out.print(
+                                "Enter the required Java version (e.g., 21): "
+                        );
+
+                        if (scanner.hasNextInt()) {
+                            int requiredVersion = scanner.nextInt();
+
+                            if (requiredVersion > 0) {
+                                VersionChecker.checkVersion(requiredVersion);
+                            } else {
+                                System.out.println(
+                                        "Please enter a positive Java version."
+                                );
+                            }
+                        } else {
+                            System.out.println(
+                                    "Invalid input. Please enter a number."
+                            );
+                            scanner.next();
+                        }
+                        break;
+
                     default:
-                        System.out.println("Invalid option. Please try again.");
+                        System.out.println(
+                                "Invalid option. Please try again."
+                        );
                 }
 
                 if (choice != 5) {
@@ -65,8 +90,8 @@ public class JavaShip {
                             "\nPress Enter to return to the menu..."
                     );
 
-                    scanner.nextLine(); // Consume leftover newline
-                    scanner.nextLine(); // Wait for Enter
+                    scanner.nextLine();
+                    scanner.nextLine();
                 }
 
             } else {
@@ -93,5 +118,6 @@ public class JavaShip {
         System.out.println("6. Java installation diagnostics");
         System.out.println("7. Check development tools");
         System.out.println("8. Troubleshooting suggestions");
+        System.out.println("9. Java version compatibility checker");
     }
 }
