@@ -78,6 +78,16 @@ public class JavaShip {
                             scanner.next();
                         }
                         break;
+                    
+                    case 10:
+                        System.out.println("Starting release-readiness checks...");
+
+                        java.util.List<CheckResult> results =
+                        ReleaseChecker.runChecks();
+
+                    ReleaseChecker.displayResults(results);
+                    break;
+
 
                     default:
                         System.out.println(
@@ -119,5 +129,6 @@ public class JavaShip {
         System.out.println("7. Check development tools");
         System.out.println("8. Troubleshooting suggestions");
         System.out.println("9. Java version compatibility checker");
+        System.out.println("10. Release readiness check");
     }
 }
