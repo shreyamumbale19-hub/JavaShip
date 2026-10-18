@@ -2,3 +2,8 @@ target/
 *.class
 .idea/
 .vscode/
+
+# Root Node.js dependencies
+/node_modules/
+/package-lock.json
+/package.json
